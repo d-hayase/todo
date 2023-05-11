@@ -50,26 +50,22 @@ return static function (RouteBuilder $routes) {
          * its action called 'display', and we pass a param to select the view file
          * to use (in this case, templates/Pages/home.php)...
          */
-        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+        $builder->get('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
-        /*
-         * ...and connect the rest of 'Pages' controller's URLs.
-         */
-        $builder->connect('/pages/*', 'Pages::display');
+        $builder->get('/tasks', ['controller' => 'Todo', 'action' => 'list']); // 一覧
 
-        /*
-         * Connect catchall routes for all controllers.
-         *
-         * The `fallbacks` method is a shortcut for
-         *
-         * ```
-         * $builder->connect('/{controller}', ['action' => 'index']);
-         * $builder->connect('/{controller}/{action}/*', []);
-         * ```
-         *
-         * You can remove these routes once you've connected the
-         * routes you want in your application.
-         */
+        /* ボード処理 */
+        $builder->post('/tasks/board', ['controller' => 'Todo', 'action' => 'addBoard']); // ボード追加
+        $builder->delete('/tasks/board/{boardId}', ['controller' => 'Todo', 'action' => 'deleteBoard'])
+            ->setPatterns(['boardId' => '\d+'])
+            ->setPass(['boardId']); // ボード削除
+
+        /* TODO処理 */
+        $builder->post('/tasks/todo', ['controller' => 'Todo', 'action' => 'addTodo']); // TODO追加
+        $builder->delete('/tasks/todo/{todoId}', ['controller' => 'Todo', 'action' => 'deleteTodo'])
+            ->setPatterns(['todoId' => '\d+'])
+            ->setPass(['todoId']); // TODO削除
+
         $builder->fallbacks();
     });
 

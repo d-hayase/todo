@@ -33,6 +33,7 @@ class ErrorController extends AppController
     public function initialize(): void
     {
         $this->loadComponent('RequestHandler');
+        $this->loadComponent('Json');
     }
 
     /**
