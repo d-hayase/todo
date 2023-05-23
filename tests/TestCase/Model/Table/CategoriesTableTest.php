@@ -23,9 +23,7 @@ class CategoriesTableTest extends TestCase
      *
      * @var array<string>
      */
-    protected $fixtures = [
-        'app.Categories',
-    ];
+    protected $fixtures = [];
 
     /**
      * setUp method
@@ -52,13 +50,12 @@ class CategoriesTableTest extends TestCase
     }
 
     /**
-     * Test validationDefault method
+     * 仮置きのテストコード
      *
      * @return void
-     * @uses \App\Model\Table\CategoriesTable::validationDefault()
      */
-    public function testValidationDefault(): void
+    public function testTemporary(): void
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->markTestSkipped();
     }
 }

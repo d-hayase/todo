@@ -10,22 +10,28 @@ use Cake\TestSuite\Fixture\TestFixture;
  */
 class CategoriesFixture extends TestFixture
 {
-    /**
-     * Init method
-     *
-     * @return void
-     */
-    public function init(): void
-    {
-        $this->records = [
-            [
-                'category_id' => 1,
-                'text' => 'Lorem ipsum dolor sit amet',
-                'created_datetime' => '2023-05-16 02:37:35',
-                'updated_datetime' => '2023-05-16 02:37:35',
-                'delete_datetime' => '2023-05-16 02:37:35',
-            ],
-        ];
-        parent::init();
-    }
+
+    public $records = [
+        [
+            'category_id' => 1,
+            'text' => '優先度高',
+            'created_datetime' => '2023-01-01 00:00:00',
+            'updated_datetime' => '2023-01-01 00:00:00',
+            'delete_datetime' => '2023-01-01 00:00:00',
+        ],
+        [
+            'category_id' => 2,
+            'text' => '優先度中',
+            'created_datetime' => '2023-01-01 00:00:00',
+            'updated_datetime' => '2023-01-01 00:00:00',
+            'delete_datetime' => '2023-01-01 00:00:00',
+        ],
+        [
+            'category_id' => 3,
+            'text' => '優先度低',
+            'created_datetime' => '2023-01-01 00:00:00',
+            'updated_datetime' => '2023-01-01 00:00:00',
+            'delete_datetime' => '2023-01-01 00:00:00',
+        ],
+    ];
 }

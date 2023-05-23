@@ -23,11 +23,7 @@ class TodoTableTest extends TestCase
      *
      * @var array<string>
      */
-    protected $fixtures = [
-        'app.Todo',
-        'app.Boards',
-        'app.Categories',
-    ];
+    protected $fixtures = [];
 
     /**
      * setUp method
@@ -54,24 +50,12 @@ class TodoTableTest extends TestCase
     }
 
     /**
-     * Test validationDefault method
+     * 仮置きのテストコード
      *
      * @return void
-     * @uses \App\Model\Table\TodoTable::validationDefault()
      */
-    public function testValidationDefault(): void
+    public function testTemporary(): void
     {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     * @uses \App\Model\Table\TodoTable::buildRules()
-     */
-    public function testBuildRules(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->markTestSkipped();
     }
 }

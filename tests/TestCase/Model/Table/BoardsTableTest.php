@@ -23,9 +23,7 @@ class BoardsTableTest extends TestCase
      *
      * @var array<string>
      */
-    protected $fixtures = [
-        'app.Boards',
-    ];
+    protected $fixtures = [];
 
     /**
      * setUp method
@@ -52,13 +50,12 @@ class BoardsTableTest extends TestCase
     }
 
     /**
-     * Test validationDefault method
+     * 仮置きのテストコード
      *
      * @return void
-     * @uses \App\Model\Table\BoardsTable::validationDefault()
      */
-    public function testValidationDefault(): void
+    public function testTemporary(): void
     {
-        $this->markTestIncomplete('Not implemented yet.');
+        $this->markTestSkipped();
     }
 }
